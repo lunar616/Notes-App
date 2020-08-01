@@ -1,0 +1,72 @@
+@import '@/assets/scss/utils/vars.scss';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto 0 auto;
+}
+
+.wrapper-content {
+  display: flex;
+  flex-direction: column;
+  margin: 0 35px;
+}
+
+.container {
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  max-width: $desktopWidth;
+}
+
+.note-header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 25px 0;
+}
+.note-header__title {
+  font-size: 32px;
+}
+
+.icons {
+  text-align: end;
+}
+.icons__svg {
+  height: 24px;
+  width: 24px;
+  margin-right: 12px;
+  color: $gray-color;
+  cursor: pointer;
+
+  &.active {
+    color: $blue-color;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .note-header {
+    grid-template-columns: 1fr;
+    grid-row-gap: 10px;
+  }
+  .icons {
+    display: none;
+  }
+}
+
+@media (max-width: 374px) {
+  .wrapper-content {
+    margin: 0 5px;
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}

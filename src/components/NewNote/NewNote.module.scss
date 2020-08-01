@@ -1,0 +1,90 @@
+@import '@/assets/scss/utils/vars.scss';
+
+.btn {
+  display: inline-block;
+  padding: .8em 2em;
+  line-height: 1;
+  text-transform: uppercase;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.new-note {
+  text-align: center;
+}
+
+.new-note__title {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.new-note__textarea {
+  margin-bottom: 30px;
+}
+
+.new-note__button {
+  margin-bottom: 20px;
+  transition: all 0.4s ease-in-out;
+}
+
+.checkbox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  margin: 0 auto 30px auto;
+  width: max-content;
+  background-color: $default-color;
+  border-radius: 30px;
+
+  input {
+    width: max-content;
+  }
+
+  input[type=radio] {
+    display: none;
+  }
+}
+
+.checked-normal,
+.checked-high,
+.checked-very-high {
+  transition: all 0.4s ease-in-out;
+  border-radius: 30px;
+}
+
+.checked-normal,
+.new-note__button {
+  color: $default-color;
+  background-color: $bg-color-blue;
+}
+
+.new-note__button {
+  border: 1px solid $bg-color-blue;
+}
+
+.checked-high,
+.new-note__button_yellow {
+  color: black;
+  background-color: $yellow-color;
+}
+
+.new-note__button_yellow {
+  border: 1px solid $yellow-color;
+}
+
+.checked-very-high,
+.new-note__button_red {
+  color: white;
+  background-color: $red-color;
+}
+
+.new-note__button_red {
+  border: 1px solid $red-color;
+}
+
+.checkbox__item {
+  margin-bottom: 0;
+  padding: 8px 13px;
+  border-radius: 30px;
+  cursor: pointer;
+}

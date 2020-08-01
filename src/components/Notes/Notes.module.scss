@@ -1,0 +1,142 @@
+@import '@/assets/scss/utils/vars.scss';
+
+.notes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding: 3px;
+  overflow: hidden;
+}
+
+.note {
+  width: 48%;
+  padding: 18px 20px 18px 10px;
+  margin-top: 20px;
+  background-color: #FFF;
+  transition: all .3s cubic-bezier(.02, .01, .47, 1);
+}
+
+.note-hover:hover {
+  transform: translateY(-6px);
+}
+
+.full {
+  width: 100%;
+}
+
+@mixin noteColors($color) {
+  box-shadow: 0px 0px 6px rgba($color, 0.6);
+  
+  &:hover {
+    box-shadow: 5px 6px 6px rgba($color, 0.6);
+  }
+
+  .note-header__title:hover,
+  .note-header__title:focus,
+  .note-body__text:hover,
+  .note-body__text:focus {
+    transition: all .5s;
+    background-color: rgba($color, 0.6);
+  }
+}
+
+.note_gray {
+  @include noteColors($gray-color);
+}
+
+.note_yellow {
+  @include noteColors($yellow-color);
+}
+
+.note_red {
+  @include noteColors($red-color);
+}
+
+.note-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &.full {
+
+    p {
+      margin-right: 16px;
+      
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.note-header__title {
+  margin-right: 10px;
+  padding: 0 10px;
+  color: $blue-color;
+  font-size: 22px;
+  user-select: none;
+  cursor: pointer;
+  word-break: break-all;
+  transition: all 0.4s ease-out;
+}
+
+.note-header__title[contenteditable] {
+  cursor: text;
+}
+
+.note-header__button-close {
+  cursor: pointer;
+}
+
+.note-body {
+  span {
+    font-size: 14px;
+    color: $light-color;
+  }
+}
+
+.note-body__text {
+  margin: 20px 0;
+  padding: 0 10px;
+  user-select: none;
+  cursor: pointer;
+  word-break: break-all;
+  transition: all 0.4s ease-out;
+}
+
+.note-body__text[contenteditable] {
+  cursor: text;
+}
+
+.note-body__date {
+  padding: 0 10px;
+}
+
+.note-enter {
+  opacity: 0;
+  transform: translateY(30px) !important;
+}
+
+.note-enter-active {
+  transition: all 1s;
+}
+
+.note-leave-active {
+  transition: all 1s;
+}
+
+.note-leave-to {
+  transition: transform 2s;
+  opacity: 0;
+  transform: translateY(-30px) !important;
+}
+
+.note-leave-active {
+  position: absolute;
+}
+
+.note-move {
+  transition: transform 1.2s;
+}
