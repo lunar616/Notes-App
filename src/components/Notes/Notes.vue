@@ -7,12 +7,14 @@
     mode="in-out" 
     appear
   >
-    <div class="note" 
+    <div 
+      class="note" 
       :class="{ full: !grid, [`note_${types[note.type].color}`]: true, 'note-hover': !animation }" 
       v-for="(note, index) of notes" :key="note.date"
     >
       <div class="note-header" :class="{ full: !grid }">
-        <h3 class="note-header__title"
+        <h3 
+          class="note-header__title"
           @click="editValue($event)"
           @blur="saveNewValue($event, index, 'title')"
           @keydown.enter.prevent.exact="e => e.target.blur()"
@@ -22,7 +24,8 @@
         <p class="note-header__button-close" @click="removeNote(index, note)">✖</p>
       </div>
       <div class="note-body">
-        <p class="note-body__text"
+        <p 
+          class="note-body__text"
           @click="editValue($event)"
           @blur="saveNewValue($event, index, 'descr')"
           @keydown.enter.prevent.exact="saveNewValue($event, index, 'descr')"

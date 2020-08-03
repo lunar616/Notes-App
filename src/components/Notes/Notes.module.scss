@@ -19,6 +19,7 @@
 }
 
 .note-hover:hover {
+  transition: transform .3s !important;
   transform: translateY(-6px);
 }
 
@@ -119,24 +120,12 @@
   transform: translateY(30px) !important;
 }
 
-.note-enter-active {
-  transition: all 1s;
-}
-
+.note-enter-active,
 .note-leave-active {
-  transition: all 1s;
+  transition: all .7s;
 }
 
 .note-leave-to {
-  transition: transform 2s;
   opacity: 0;
   transform: translateY(-30px) !important;
-}
-
-.note-leave-active {
-  position: absolute;
-}
-
-.note-move {
-  transition: transform 1.2s;
 }
